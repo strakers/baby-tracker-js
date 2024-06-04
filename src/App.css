@@ -1,0 +1,138 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  --timer-backdground-color: #1a1a1a;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.card.grid {
+  --border: 1px solid #777;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: var(--border);
+  border-top: var(--border);
+  margin-bottom: 3rem;
+  gap: 1rem;
+
+  .subgrid {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 3;
+    position: relative;
+
+    &:before {
+      content: attr(data-id);
+      position: absolute;
+      left: -2rem;
+      padding: 0.25rem;
+    }
+  }
+
+  & > * {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-weight: 100;
+    font-size: 0.75rem;
+  }
+
+  .value {
+    background-color: var(--timer-backdground-color);
+    padding: 0.25rem;
+    border-radius: 4px;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+
+  & > * {
+    flex: 1 1 0;
+  }
+
+  button {
+    background-color: var(--accent-color, initial);
+  }
+
+  button[data-type='start'] {
+    --accent-color: green;
+  }
+  button[data-type='end'] {
+    --accent-color: maroon;
+  }
+  button[data-type='reset'] {
+    --accent-color: slategray;
+  }
+  button[data-type='pause'] {
+    --accent-color: purple;
+  }
+
+  button[disabled] {
+    filter: contrast(70%);
+  }
+}
+
+.timer {
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+hr[data-thin] {
+  border: 0 none;
+  background-color: #777;
+  height: 1px;
+  margin: 2rem 0;
+}
+
+.form-control {
+  padding: 0.5rem 0;
+  width: max-content;
+  display: inline-block;
+  text-align: center;
+  border: 0 none;
+}
+
+.input-container {
+  display: inline-block;
+}

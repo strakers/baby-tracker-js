@@ -1,0 +1,51 @@
+nav ul {
+  display: grid;
+  list-style-type: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+ul.menu {
+  li {
+    display: block;
+
+    & > a {
+      display: block;
+      padding: 1rem;
+      align-content: center;
+
+      color-scheme: light dark;
+      color: rgba(255, 255, 255, 0.87);
+      background-color: #383838;
+      border-radius: 8px;
+      transition: background-color 200ms ease;
+
+      &:hover,
+      &:focus,
+      &:focus-within,
+      &:active {
+        background-color: #292828;
+      }
+    }
+  }
+}
+
+.menu.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.menu.menu-tray {
+  --minimum-width: 150px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--minimum-width), 1fr));
+}
+
+.responsive-grid {
+  /* smallest possible width */
+  --minimum-width: 150px;
+  /* the magic settings */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--minimum-width), 1fr));
+}

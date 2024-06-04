@@ -1,0 +1,10 @@
+.window {
+  width: 100%;
+  min-height: 100svh;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  &:nth-child(2n + 1) {
+    background-color: #e00;
+  }
+}
